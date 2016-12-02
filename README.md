@@ -214,3 +214,10 @@ https://realm.io/docs/react-native/latest/#getting-started
 
 
 
+## Troubleshooting
+- `Undefined is not an object (evaluating 'blah.core.init.call')`
+This is usually a compilation issue. Perform a `lein cljs build` to locate the problem.
+
+
+
+
