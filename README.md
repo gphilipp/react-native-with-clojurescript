@@ -210,14 +210,26 @@ https://realm.io/docs/react-native/latest/#getting-started
 6. Run `(js/require "react-native-store")` in the repl.
 
 ## Custom Native Components
-- https://github.com/frostney/react-native-create-library
+- A helper lib to create custom native ios components https://github.com/frostney/react-native-create-library
 
 
 
 ## Troubleshooting
+
 - `Undefined is not an object (evaluating 'blah.core.init.call')`
 This is usually a compilation issue. Perform a `lein cljs build` to locate the problem.
 
+- HAXM for Android and Docker cannot run at the same time  (http://stackoverflow.com/a/39155604/50114)
+
+- How to prevent node from running out of memory when bundling js for React Native
+http://stackoverflow.com/questions/38198511/how-to-prevent-node-from-running-out-of-memory-when-bundling-js-for-react-native/38198512
+
+
+
+
+
+How to prevent node from running out of memory when bundling js for React Native
+http://stackoverflow.com/questions/38198511/how-to-prevent-node-from-running-out-of-memory-when-bundling-js-for-react-native/38198512
 
 
 
