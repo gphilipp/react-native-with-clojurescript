@@ -60,7 +60,7 @@ flight, using a tool called pilot
 > @savelichalex: continuous integration that pushes every commit to master to testflight is a total life-saver you can build the archive e.g. using xctool
 
 
-## Testin
+## Testing
 
 > etherfuse 08:26:28
 also, when writing tests, what do you normally use? clojure.test or javascript frameworks? I’ve seen both, so I’m curious what the most common scenario is ?
