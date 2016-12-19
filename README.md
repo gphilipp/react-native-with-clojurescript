@@ -212,6 +212,7 @@ https://realm.io/docs/react-native/latest/#getting-started
 ## Custom Native Components
 - A helper lib to create custom native ios components https://github.com/frostney/react-native-create-library
 
+> another warn is file and properties names, don't use names that start with RTC, use another namespace, don't use properties like margin, font-size and so one, this is cause conflicts and RN overwrite it. Also remember that if you write your file with Manager at the end, then in your code you don't need to write it, i.e file name - MyViewManager in cljs (require-native-component "MyView") (https://clojurians-log.clojureverse.org/cljsrn/2016-11-10.html#inst-2016-11-10T08:59:13.002600Z)
 
 
 ## Troubleshooting
