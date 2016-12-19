@@ -227,9 +227,3 @@ http://stackoverflow.com/questions/38198511/how-to-prevent-node-from-running-out
 
 
 
-
-How to prevent node from running out of memory when bundling js for React Native
-http://stackoverflow.com/questions/38198511/how-to-prevent-node-from-running-out-of-memory-when-bundling-js-for-react-native/38198512
-
-
-
