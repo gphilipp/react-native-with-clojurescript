@@ -52,11 +52,21 @@ See the support directory and the build.boot file: https://github.com/kennyjwill
 - Optionally : `re-natal use-figwheel`
 
 ## Shipping
-- fastlane allows you to push to testflight, using a tool called pilot
+- fastlane allows you to push to 
+flight, using a tool called pilot
 - Blog post: http://blog.thebakery.io/continuous-integration-for-react-native-applications-with-fastlane-and-bitrise-ios-version/
 - https://facebook.github.io/react-native/docs/running-on-device-ios.html#building-your-app-for-production
 
 > @savelichalex: continuous integration that pushes every commit to master to testflight is a total life-saver you can build the archive e.g. using xctool
+
+
+## Testin
+
+> etherfuse 08:26:28
+also, when writing tests, what do you normally use? clojure.test or javascript frameworks? I’ve seen both, so I’m curious what the most common scenario is ?
+
+>vikeri 09:01:28 @etherfuse Have you followed this tutorial: http://presumably.de/boot-react-native.html ? We are using doo + re-frame-test for testing. I talk a little about it here: https://youtu.be/6IYm34nDL64?t=9m3s (didn’t use re-frame-test then though.)
+
 
 > @vikeri: Seems testing is not really a priority at facebook. I am testing my re-frame logic and has worked with react-native-mock to test the components in node. Works alright.
 
