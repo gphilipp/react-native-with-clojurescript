@@ -12,6 +12,7 @@ Below is a collection of links, interesting ramblings on Slack from the #cljsrn 
 - https://github.com/rockiger/re-natal-tutorial
 
 ## Example apps
+- https://github.com/Slowyn/DevDayToDo
 - https://github.com/areina/elfeed-cljsrn
 - https://github.com/madvas/catlantis
 - https://github.com/drapanjanas/pneumatic-tubes/tree/master/examples/group-chat-app (web socket w/o sente, w/ http-kit)
