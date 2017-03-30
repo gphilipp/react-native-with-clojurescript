@@ -237,6 +237,10 @@ This is usually a compilation issue. Perform a `lein cljs build` to locate the p
 - How to prevent node from running out of memory when bundling js for React Native
 http://stackoverflow.com/questions/38198511/how-to-prevent-node-from-running-out-of-memory-when-bundling-js-for-react-native/38198512
 
+- Never ever use a `println` or a `prn` inside your code, use the logging method described above with `react-native log-ios`, it will works correctly with the simulator or in dev mode on real device but will _crash abruptly_ when deployed in production (like with beta testflight).
+
+- If you need react native crash analysis tools: http://stackoverflow.com/questions/36947752/whats-a-good-setup-for-react-native-crash-reporting
+
 
 
 
