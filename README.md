@@ -22,13 +22,13 @@ Below is a collection of links, interesting ramblings on Slack from the #cljsrn 
 - https://github.com/Quantisan/re-frame-firebase-example (firebase + re-frame)
 
 ## Navigation
-- https://github.com/vikeri/re-navigate
-- https://github.com/weltan/navigation (building on the first for a more substantive example)
+Facebook has deprecated all pre-existing navigation mechanism in favor of react-navigation.
+A good example of using it is https://github.com/vikeri/re-navigate.
+Sean Tempesta has created a good base namespace for defining how navigation is expected to work thanks to clojure.spec. You can find this [base namespace here](https://gist.github.com/seantempesta/432ab1e60d2216a668dc2c1bd9fa2066) and the [reagent-specific extension here](https://gist.github.com/seantempesta/33edc5d847542453e6ec7caeae05721a).
+
+So, these libraries aren't useful anymore :
 - https://github.com/wix/react-native-navigation/
-    > @seantempesta yeah, I just loaded up the example app in react-native-navigation and it’s buttery smooth
-- Example : https://github.com/savelichalex/Souptitle/blob/master/src/teach_by_friends/shared/ui.cljs#L75-L99
-- Example from lymchat app: https://github.com/tiensonqin/lymchat-exp/blob/master/src/lymchat/util.cljs#L238-L255
-NavigationExperimental can work quite well with re-frame, a minimal example here: https://github.com/vikeri/re-navigate
+- NavigationExperimental (which has been removed from RN since 0.43)
 
 ## Run on device
 1. Get IP address from iphone settings
