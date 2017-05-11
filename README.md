@@ -30,6 +30,9 @@ So, these libraries aren't useful anymore :
 - https://github.com/wix/react-native-navigation/
 - NavigationExperimental (which has been removed from RN since 0.43)
 
+#### Some design details
+- Routers define the relationship between URIs, actions, and navigation state. They allow to share navigation logic between mobile apps, web apps, and server rendering.
+
 ## Run on device
 1. Get IP address from iphone settings
 2. Run `re-natal use-ios-device` with that IP address.
