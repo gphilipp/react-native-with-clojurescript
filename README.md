@@ -22,7 +22,7 @@ Below is a collection of links, interesting ramblings on Slack from the #cljsrn 
 - https://github.com/Quantisan/re-frame-firebase-example (firebase + re-frame)
 
 ## Navigation
-Facebook has deprecated all pre-existing navigation mechanism in favor of their new contribution: [react-navigation](https://reactnavigation.org).
+Facebook has deprecated all pre-existing navigation mechanism in favor of their new contribution: [react-navigation](https://reactnavigation.org). Its run by the react community, so not by Facebook directly, but it's endorsed: https://github.com/react-community/react-navigation.
 A good example of using it is https://github.com/vikeri/re-navigate.
 Sean Tempesta has created a good base namespace for defining how navigation is expected to work thanks to clojure.spec. You can find this [base namespace here](https://gist.github.com/seantempesta/432ab1e60d2216a668dc2c1bd9fa2066) and the [reagent-specific extension here](https://gist.github.com/seantempesta/33edc5d847542453e6ec7caeae05721a).
 
