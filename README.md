@@ -30,8 +30,10 @@ So, these libraries aren't useful anymore :
 - https://github.com/wix/react-native-navigation/
 - NavigationExperimental (which has been removed from RN since 0.43)
 
-#### Some design details
+#### High-level design
 - Routers define the relationship between URIs, actions, and navigation state. They allow to share navigation logic between mobile apps, web apps, and server rendering.
+- Navigators allow you to define your application's navigation structure. Navigators also render common elements such as headers and tab bars which you can configure. Under the hood, navigators are plain React components.
+
 
 ## Run on device
 1. Get IP address from iphone settings
