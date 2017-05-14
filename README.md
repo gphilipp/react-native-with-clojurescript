@@ -155,11 +155,9 @@ flight, using a tool called pilot
 
 ## Testing
 
-> At Facebook, we use Jest to test React Native applications. https://facebook.github.io/jest/docs/tutorial-react-native.html
+- At Facebook, we use Jest to test React Native applications. https://facebook.github.io/jest/docs/tutorial-react-native.html
 
-> Vikeri:
-@seantempesta What we’re doing is using https://github.com/airbnb/enzyme and shallow-render the components. That will not generate anything useful but at least it will throw if there are any js-errors. But fb have released a new snapshot test feature for jest that would probably be more useful: https://facebook.github.io/jest/docs/tutorial-react-native.html
-We’re doing this for spec tests:
+- Vikeri: @seantempesta What we’re doing is using https://github.com/airbnb/enzyme and shallow-render the components. That will not generate anything useful but at least it will throw if there are any js-errors. But fb have released a new snapshot test feature for jest that would probably be more useful: https://facebook.github.io/jest/docs/tutorial-react-native.html. We’re doing this for spec tests:
 
 ``` clojure
 (defmacro generative-tests
@@ -189,8 +187,8 @@ We’re doing this for spec tests:
 
 ```
 
-
 - Acceptance Testing: https://github.com/wix/detox 
+- Integration Testing framework for RN: https://github.com/pixielabs/cavy
 - Vikeri: We are using doo + re-frame-test for testing. I talk a little about it here: https://youtu.be/6IYm34nDL64?t=9m3s (didn’t use re-frame-test then though.)
 - Sean Tempesta: No idea if it works with RN, but I just attended a talk on iOS testing where this guy did 2 months of research and he recommended Calabash. http://calaba.sh/
 
