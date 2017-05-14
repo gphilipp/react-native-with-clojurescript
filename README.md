@@ -10,8 +10,16 @@ Below is a collection of links, interesting ramblings on Slack from the #cljsrn 
 
 ## From JavaScript to ClojureScript
 
-Very useful page from @buskana to translate javascript idioms into ClojureScript:  https://kanaka.github.io/clojurescript/web/synonym.html
+- Very useful page from @buskana to translate javascript idioms into ClojureScript:  https://kanaka.github.io/clojurescript/web/synonym.html
 
+- Types and ClojureScript ops 
+By D. Nolen https://github.com/cljs/api/issues/128#issuecomment-122271806)
+
+| Type     | Op                                            |
+| ---      | ---                                           |
+|ILookup   | get or get-in                                 |
+|js/Array  | aget                                          |                                          
+|js/Object | goog.object/get or goog.object/getValueByKeys |
 
 
 ## Tutorials
