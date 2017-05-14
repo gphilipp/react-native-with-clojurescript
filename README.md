@@ -8,6 +8,11 @@ Below is a collection of links, interesting ramblings on Slack from the #cljsrn 
 
 
 
+## From JavaScript to ClojureScript
+
+Very useful page from @buskana to translate javascript idioms into ClojureScript:  https://kanaka.github.io/clojurescript/web/synonym.html
+
+
 
 ## Tutorials
 - http://cljsrn.org/, talks and videos section
