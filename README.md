@@ -21,6 +21,9 @@ By D. Nolen https://github.com/cljs/api/issues/128#issuecomment-122271806)
 |js/Array  | aget                                          |                                          
 |js/Object | goog.object/get or goog.object/getValueByKeys |
 
+- Master the Dot syntax with http://cljs.github.io/api/syntax/dot. Ex to get the value of an InputText: 
+`(.-target (.-value %))`
+
 
 ## Tutorials
 - http://cljsrn.org/, talks and videos section
