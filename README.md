@@ -158,7 +158,7 @@ flight, using a tool called pilot
 > At Facebook, we use Jest to test React Native applications. https://facebook.github.io/jest/docs/tutorial-react-native.html
 
 > Vikeri:
-@seantempesta What we’re doing is using enzyme and shallow-render the components. That will not generate anything useful but at least it will throw if there are any js-errors. But fb have released a new snapshot test feature for jest that would probably be more useful: https://facebook.github.io/jest/docs/tutorial-react-native.html
+@seantempesta What we’re doing is using https://github.com/airbnb/enzyme and shallow-render the components. That will not generate anything useful but at least it will throw if there are any js-errors. But fb have released a new snapshot test feature for jest that would probably be more useful: https://facebook.github.io/jest/docs/tutorial-react-native.html
 We’re doing this for spec tests:
 
 ``` clojure
@@ -190,29 +190,11 @@ We’re doing this for spec tests:
 ```
 
 
-> etherfuse 08:26:28
-also, when writing tests, what do you normally use? clojure.test or javascript frameworks? I’ve seen both, so I’m curious what the most common scenario is ?
+- Acceptance Testing: https://github.com/wix/detox 
+- Vikeri: We are using doo + re-frame-test for testing. I talk a little about it here: https://youtu.be/6IYm34nDL64?t=9m3s (didn’t use re-frame-test then though.)
+- Sean Tempesta: No idea if it works with RN, but I just attended a talk on iOS testing where this guy did 2 months of research and he recommended Calabash. http://calaba.sh/
 
->vikeri 09:01:28 @etherfuse Have you followed this tutorial: http://presumably.de/boot-react-native.html ? We are using doo + re-frame-test for testing. I talk a little about it here: https://youtu.be/6IYm34nDL64?t=9m3s (didn’t use re-frame-test then though.)
-
-
-> @vikeri: Seems testing is not really a priority at facebook. I am testing my re-frame logic and has worked with react-native-mock to test the components in node. Works alright.
-
-> @seantempesta
-No idea if it works with RN, but I just attended a talk on iOS testing where this guy did 2 months of research and he recommended Calabash. http://calaba.sh/
-
-> @artemyarulin As far as I remember it’s about UI testing first of all. in RN world there is snapshot testing which is also quiet interesting https://facebook.github.io/jest/blog/2016/07/27/jest-14.html
-
-@vikeri uses https://github.com/airbnb/enzyme to test his components with enzymes' `render`function.
-
-> @ilmirajat (author of https://github.com/Trustroots/Trustroots-React-Native)
-Btw. do any of you have good refence how unit tests code properly in Cljsrn. The best reference I've found, is this https://github.com/futurice/pepperoni-app-kit. It uses Enzyme (https://github.com/airbnb/enzyme) and React-native-mock for mocking hardware. It was pure pain to get unit tests work reasonably well, and I'm not quite satisfied to my solution.
-
-> artemyarulin We’ve discusses testing theme a bit before here - nothing “production ready”. I guess official RN way would be https://facebook.github.io/jest/blog/2016/07/27/jest-14.html, although now it’s experimental
-
-> @pesterhazy for UI work I'm not convinced unit tests are very helpful. I mean most of the complexity in UIs is in the interconnection of components, and in the interplay with the runtime (browser or RN)
-
-> @ilmirajat I also decided to use Node instead of phantomjs because I wanted to ensure that npm dependencies don't use things (e.g.window object) that React Native doesn't have.
+-  @ilmirajat (author of https://github.com/Trustroots/Trustroots-React-Native) : Btw. do any of you have good refence how unit tests code properly in Cljsrn. The best reference I've found, is this https://github.com/futurice/pepperoni-app-kit. It uses Enzyme (https://github.com/airbnb/enzyme) and React-native-mock for mocking hardware. It was pure pain to get unit tests work reasonably well, and I'm not quite satisfied to my solution.
 
 ## Logging
 - Use `react-native log-ios` in a separate terminal (cluttered with random, useless messages that it's really hard to read says @pesterhazy)
