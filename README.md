@@ -7,9 +7,12 @@ I've tried re-natal with om-next first, but found it quite difficult to use due 
 Below is a collection of links, interesting ramblings on Slack from the #cljsrn channel. I'll try to add simple examples to get started and keep it up-to-date with newest versions of react-native and re-natal.
 
 
+
+
 ## Tutorials
 - http://cljsrn.org/, talks and videos section
 - https://github.com/rockiger/re-natal-tutorial
+
 
 ## Example apps
 - https://github.com/Slowyn/DevDayToDo
@@ -20,6 +23,49 @@ Below is a collection of links, interesting ramblings on Slack from the #cljsrn 
 - https://github.com/alwx/luno-react-native + [Experience Report](https://medium.com/@alwxdev/react-native-summing-up-86838441d289) 
 - https://github.com/tiensonqin/exponent-cljs-template (examples for nav, supports om-next and re-frame)
 - https://github.com/Quantisan/re-frame-firebase-example (firebase + re-frame)
+
+
+## Frontend libraries/frameworks
+You can use om-next,[re-frame](https://github.com/Day8/re-frame), or rum.
+
+#### Om-next
+If you use om-next, check out this blog post on writing om-next reloadable code : https://anmonteiro.com/2016/01/writing-om-next-reloadable-code-a-checklist/.
+
+#### Re-Frame
+https://github.com/seantempesta/cljsrn-re-frame-workers
+
+
+## Tooling
+
+
+#### Re-natal
+
+#### How to add an external library
+1. `re-natal use-component react-native-store re-natal use-figwheel`
+2. Check component is listed in `.re-natal` and in `package.json`
+3. `re-natal use-figwheel`
+4. `lein figwheel ios` since `re-natal use-figwheel` does a clean first.
+5. Check that `localhost:8081/index.ios.bundle` lists the component.
+6. Run `(js/require "react-native-store")` in the repl.
+
+#### Boot-react-native
+
+Source maps have been disabled for a while :
+https://github.com/mjmeintjes/boot-react-native/issues/58
+
+@pesterhazy: one thing that is great is that brn integrates with RN's packager directly, so you get all its features. including pretty fast reloading, requiring images just works
+@pesterhazy: boot-react-native badly needs updating, code and docs
+
+Blog post of Aug 2016: http://presumably.de/boot-react-native.html
+
+Troubleshooting: https://github.com/mjmeintjes/boot-react-native/wiki/Troubleshooting
+
+Proper restart
+- restart the app (not relying on boot-reload)
+- clearing the packager cache `react-native start --refresh-cache true`
+- check the bundle output `http://localhost:8081/index.ios.bundle?platform=ios&dev=true&hot=true`
+
+
 
 ## Navigation
 Facebook has deprecated all pre-existing navigation mechanism in favor of their new contribution: [react-navigation](https://reactnavigation.org). Its run by the react community, so not by Facebook directly, but it's endorsed: https://github.com/react-community/react-navigation.
@@ -35,7 +81,7 @@ So, these libraries aren't useful anymore :
 - Navigators allow you to define your application's navigation structure. Navigators also render common elements such as headers and tab bars which you can configure. Under the hood, navigators are plain React components.
 
 
-## Run on device
+## Running on device
 1. Get IP address from iphone settings
 2. Run `re-natal use-ios-device` with that IP address.
 3. Run `lein prod-build`
@@ -46,10 +92,6 @@ So, these libraries aren't useful anymore :
 ## Debugging
 - shake the device simulator -> enable browser debugging. It'll print exceptions in the console. some will have only js code "lines", some will have cljs ones (https://www.jetbrains.com/help/idea/2016.1/debugging-javascript.html?origin=old_help)
 - Device log: `react-native log-ios`
-
-## Om-next
-- Writing om-next reloadable code : https://anmonteiro.com/2016/01/writing-om-next-reloadable-code-a-checklist/
-
 
 ## Re-natal Hack
 See the support directory and the build.boot file: https://github.com/kennyjwilli/postal-app
@@ -103,31 +145,6 @@ Avanced compilation for production requires rn-externs: https://github.com/artem
 Then @pesterhazy says that advanced compilation is not necessarily worth the effort on react native because bundle size doesn't matter as much as on the web. @artemyarulin replies that there are still to cases for that: 1) If you want to do hot deploys and do it daily or more often (like we used to do in web) and 2) GC is best obfuscator - not a big deal for certain cases, but it drives me crazy a bit that somebody can unpack bundle and recreate the app in 10 minutes. @pesterhazy agrees and adds that there might be speed bumps too.
 (https://clojurians-log.clojureverse.org/cljsrn/2016-08-05.html)
 
-## Frameworks 
-
-## Reagent
-
-Best link: https://reagent-project.github.io/
-
-## Re-frame
-https://github.com/Day8/re-frame
-
-## Performance
-https://github.com/seantempesta/cljsrn-re-frame-workers
-
-
-## Boot-react-native
-@pesterhazy: one thing that is great is that brn integrates with RN's packager directly, so you get all its features. including pretty fast reloading, requiring images just works
-@pesterhazy: boot-react-native badly needs updating, code and docs
-
-Blog post of Aug 2016: http://presumably.de/boot-react-native.html
-
-Troubleshooting: https://github.com/mjmeintjes/boot-react-native/wiki/Troubleshooting
-
-Proper restart
-- restart the app (not relying on boot-reload)
-- clearing the packager cache `react-native start --refresh-cache true`
-- check the bundle output `http://localhost:8081/index.ios.bundle?platform=ios&dev=true&hot=true`
 
 
 ## Fetching Data
@@ -213,18 +230,6 @@ https://realm.io/docs/react-native/latest/#getting-started
 
 > @tiensonqin: I used Realm.js. I have to store contacts and chat history in disk, so datascript along not works for me.
 
-
-## Re-natal Workflow 
-- `re-natal enable-source-maps`
-
-
-## Re-natal Workflow - Add components
-1. `re-natal use-component react-native-store re-natal use-figwheel`
-2. Check component is listed in `.re-natal` and in `package.json`
-3. `re-natal use-figwheel`
-4. `lein figwheel ios` since `re-natal use-figwheel` does a clean first.
-5. Check that `localhost:8081/index.ios.bundle` lists the component.
-6. Run `(js/require "react-native-store")` in the repl.
 
 ## Custom Native Components
 - A helper lib to create custom native ios components https://github.com/frostney/react-native-create-library
