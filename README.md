@@ -93,6 +93,7 @@ So, these libraries aren't useful anymore :
 
 ## Lists
 
+- https://facebook.github.io/react-native/blog/2017/03/13/better-list-views.html
 - Example of VirtualizedList: https://gist.github.com/raspasov/e9a1008f2c0d5be2d202f0a4cdebe009
 
 
