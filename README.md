@@ -160,7 +160,7 @@ flight, using a tool called pilot
 @seantempesta What we’re doing is using enzyme and shallow-render the components. That will not generate anything useful but at least it will throw if there are any js-errors. But fb have released a new snapshot test feature for jest that would probably be more useful: https://facebook.github.io/jest/docs/tutorial-react-native.html
 We’re doing this for spec tests:
 
-```
+``` clojure
 (defmacro generative-tests
   "Takes a list of fn symbols and runs generative tests on them"
   [fn-syms]
