@@ -155,6 +155,40 @@ flight, using a tool called pilot
 
 ## Testing
 
+
+> Vikeri:
+@seantempesta What we’re doing is using enzyme and shallow-render the components. That will not generate anything useful but at least it will throw if there are any js-errors. But fb have released a new snapshot test feature for jest that would probably be more useful: https://facebook.github.io/jest/docs/tutorial-react-native.html
+We’re doing this for spec tests:
+
+```
+(defmacro generative-tests
+  "Takes a list of fn symbols and runs generative tests on them"
+  [fn-syms]
+  (let [opts#     {:clojure.test.check/opts {:num-tests 1}}
+        long-res# (cljs.spec.test/check ~fn-syms opts#)
+        res#      (cljs.spec.test/summarize-results long-res#)]
+    (cljs.test/is (-> ~fn-syms empty? not) "A namespace was empty")
+    (cljs.test/is
+      (not (or (:check-failed res#)
+             (:check-threw res#)
+             (:instrument res#)))
+      (str "Spec failed for " (map :sym (filter :failure long-res#))))))
+
+(s/fdef generative-tests :args (s/cat :syms (s/coll-of any?)))
+
+(defn- gen-test ([n] (gen-test n #{}))
+  ([n {:keys [exclude]}] `(generative-tests
+                            (clojure.set/difference
+                              (enumerate-namespace ~n) ~exclude))))
+
+(defmacro gen-test-ns
+  "Takes a ns and optionally excluded syms and runs generative tests for all the functions"
+  [& args]
+  (apply gen-test args))
+
+```
+
+
 > etherfuse 08:26:28
 also, when writing tests, what do you normally use? clojure.test or javascript frameworks? I’ve seen both, so I’m curious what the most common scenario is ?
 
