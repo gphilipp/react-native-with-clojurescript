@@ -44,7 +44,6 @@ If you use om-next, check out this blog post on writing om-next reloadable code 
 
 ## Tooling
 
-
 #### Re-natal
 
 #### How to add an external library
@@ -73,7 +72,6 @@ Proper restart
 - check the bundle output `http://localhost:8081/index.ios.bundle?platform=ios&dev=true&hot=true`
 
 
-
 ## Navigation
 Facebook has deprecated all pre-existing navigation mechanism in favor of their new contribution: [react-navigation](https://reactnavigation.org). Its run by the react community, so not by Facebook directly, but it's endorsed: https://github.com/react-community/react-navigation.
 A good example of using it is https://github.com/vikeri/re-navigate.
@@ -91,6 +89,11 @@ So, these libraries aren't useful anymore :
 #### High-level design
 - Routers define the relationship between URIs, actions, and navigation state. They allow to share navigation logic between mobile apps, web apps, and server rendering.
 - Navigators allow you to define your application's navigation structure. Navigators also render common elements such as headers and tab bars which you can configure. Under the hood, navigators are plain React components.
+
+
+## Lists
+
+- Example of VirtualizedList: https://gist.github.com/raspasov/e9a1008f2c0d5be2d202f0a4cdebe009
 
 
 ## Running on device
