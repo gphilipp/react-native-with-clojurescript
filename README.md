@@ -31,8 +31,10 @@ You can use om-next,[re-frame](https://github.com/Day8/re-frame), or rum.
 #### Om-next
 If you use om-next, check out this blog post on writing om-next reloadable code : https://anmonteiro.com/2016/01/writing-om-next-reloadable-code-a-checklist/.
 
-#### Re-Frame
-https://github.com/seantempesta/cljsrn-re-frame-workers
+#### Re-Frame must-reads
+- Its stellar documentation: https://github.com/Day8/re-frame
+- Reagents components: https://github.com/reagent-project/reagent/wiki/Links-and-Resources
+- Re-frame workers: https://github.com/seantempesta/cljsrn-re-frame-workers
 
 
 ## Tooling
