@@ -6,6 +6,9 @@ I've tried re-natal with om-next first, but found it quite difficult to use due 
 
 Below is a collection of links, interesting ramblings on Slack from the #cljsrn channel. I'll try to add simple examples to get started and keep it up-to-date with newest versions of react-native and re-natal.
 
+## Real apps written in React-Native 
+
+- https://eng.uber.com/ubereats-react-native/
 
 
 ## Interop with JavaScript
