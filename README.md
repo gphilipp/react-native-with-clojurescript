@@ -8,7 +8,8 @@ Below is a collection of links, interesting ramblings on Slack from the #cljsrn 
 
 ## Real apps written in React-Native 
 
-- https://eng.uber.com/ubereats-react-native/
+- Uber https://eng.uber.com/ubereats-react-native/
+- Airbnb https://speakerdeck.com/felipecsl/react-native-at-airbnb
 
 
 ## Interop with JavaScript
