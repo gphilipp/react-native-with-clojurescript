@@ -40,7 +40,7 @@ If you use om-next, check out this blog post on writing om-next reloadable code 
 - Read its stellar documentation: https://github.com/Day8/re-frame
 - Reagents components: https://github.com/reagent-project/reagent/wiki/Links-and-Resources
 - Re-frame workers: https://github.com/seantempesta/cljsrn-re-frame-workers
-- Use https://github.com/flexsurfer/re-frisk to visualize state (works with RN too)
+
 
 ## Tooling
 
@@ -107,6 +107,11 @@ So, these libraries aren't useful anymore :
 ## Debugging
 - shake the device simulator -> enable browser debugging. It'll print exceptions in the console. some will have only js code "lines", some will have cljs ones (https://www.jetbrains.com/help/idea/2016.1/debugging-javascript.html?origin=old_help)
 - Device log: `react-native log-ios`
+
+#### Frisk to visualize state
+- Use https://github.com/flexsurfer/re-frisk
+- https://github.com/flexsurfer/lein-re-frisk/blob/master/plugin/src/leiningen/re_frisk.clj
+
 
 ## Re-natal Hack
 See the support directory and the build.boot file: https://github.com/kennyjwilli/postal-app
