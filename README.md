@@ -144,7 +144,7 @@ Facebook has implemented a virtualized list to reduce memory consumption: https:
 - Device log: `react-native log-ios`
 
 #### Frisk to visualize state
-- Use https://github.com/flexsurfer/re-frisk
+- https://github.com/flexsurfer/re-frisk/wiki/Using-re-frisk-with-re-natal
 - https://github.com/flexsurfer/lein-re-frisk/blob/master/plugin/src/leiningen/re_frisk.clj
 
 
