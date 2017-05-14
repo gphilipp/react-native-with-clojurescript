@@ -36,11 +36,11 @@ You can use om-next,[re-frame](https://github.com/Day8/re-frame), or rum.
 #### Om-next
 If you use om-next, check out this blog post on writing om-next reloadable code : https://anmonteiro.com/2016/01/writing-om-next-reloadable-code-a-checklist/.
 
-#### Re-Frame must-reads
-- Its stellar documentation: https://github.com/Day8/re-frame
+#### Re-Frame
+- Read its stellar documentation: https://github.com/Day8/re-frame
 - Reagents components: https://github.com/reagent-project/reagent/wiki/Links-and-Resources
 - Re-frame workers: https://github.com/seantempesta/cljsrn-re-frame-workers
-
+- Use https://github.com/flexsurfer/re-frisk to visualize state (works with RN too)
 
 ## Tooling
 
@@ -227,6 +227,7 @@ oh my! 60 fps UI on iphone 5 device :aw_yeah:
 recently many dot-forms did not work for me because those required symbol instead of expression as a first argument in things like: (.. (expr) -someAttr -anotherAttr)
 so I used let, and it worked. (let [s (expr)] (.. s -someAttr -anotherAttr)
 - use refs w/ reagent : [example1](https://clojurians.slack.com/files/andre.richards/F1Y699AMV/drawer___ref.clj), [example 2](https://gist.github.com/pesterhazy/4d9df2edc303e5706d547aeabe0e17e1)
+
 
 ## Build plugin offline
 https://github.com/vikeri/rn-cljs-tools
