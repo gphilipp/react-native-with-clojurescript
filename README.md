@@ -155,6 +155,7 @@ flight, using a tool called pilot
 
 ## Testing
 
+> At Facebook, we use Jest to test React Native applications. https://facebook.github.io/jest/docs/tutorial-react-native.html
 
 > Vikeri:
 @seantempesta What we’re doing is using enzyme and shallow-render the components. That will not generate anything useful but at least it will throw if there are any js-errors. But fb have released a new snapshot test feature for jest that would probably be more useful: https://facebook.github.io/jest/docs/tutorial-react-native.html
