@@ -98,6 +98,10 @@ So, these libraries aren't useful anymore :
 - Routers define the relationship between URIs, actions, and navigation state. They allow to share navigation logic between mobile apps, web apps, and server rendering.
 - Navigators allow you to define your application's navigation structure. Navigators also render common elements such as headers and tab bars which you can configure. Under the hood, navigators are plain React components.
 
+## Components 
+
+- Nice component wrapper lib: https://github.com/re-native
+
 
 ## Lists
 
