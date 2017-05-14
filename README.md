@@ -89,7 +89,11 @@ Proper restart
 
 ## Navigation
 Facebook has deprecated all pre-existing navigation mechanism in favor of their new contribution: [react-navigation](https://reactnavigation.org). Its run by the react community, so not by Facebook directly, but it's endorsed: https://github.com/react-community/react-navigation.
-A good example of using it is https://github.com/vikeri/re-navigate.
+
+Two good examples of using it is 
+- Using Re-Frame : https://github.com/vikeri/re-navigate.
+- Using Om-Next: https://github.com/amorokh/om-navigate
+
 Sean Tempesta has created a good base namespace for defining how navigation is expected to work thanks to clojure.spec. You can find this [base namespace here](https://gist.github.com/seantempesta/432ab1e60d2216a668dc2c1bd9fa2066) and the [reagent-specific extension here](https://gist.github.com/seantempesta/33edc5d847542453e6ec7caeae05721a).
 
 So, these libraries aren't useful anymore :
