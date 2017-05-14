@@ -49,6 +49,9 @@ By D. Nolen https://github.com/cljs/api/issues/128#issuecomment-122271806)
 - https://github.com/Quantisan/re-frame-firebase-example (firebase + re-frame)
 
 
+## nice components
+- https://github.com/24ark/react-native-step-indicator
+
 ## Frontend libraries/frameworks
 You can use om-next,[re-frame](https://github.com/Day8/re-frame), or rum.
 
