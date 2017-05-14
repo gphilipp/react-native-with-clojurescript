@@ -73,8 +73,13 @@ A good example of using it is https://github.com/vikeri/re-navigate.
 Sean Tempesta has created a good base namespace for defining how navigation is expected to work thanks to clojure.spec. You can find this [base namespace here](https://gist.github.com/seantempesta/432ab1e60d2216a668dc2c1bd9fa2066) and the [reagent-specific extension here](https://gist.github.com/seantempesta/33edc5d847542453e6ec7caeae05721a).
 
 So, these libraries aren't useful anymore :
-- https://github.com/wix/react-native-navigation/
-- NavigationExperimental (which has been removed from RN since 0.43)
+- [Navigator](https://facebook.github.io/react-native/docs/navigation.html#navigator) (and its close cousin [NavigatorIOS]
+(https://facebook.github.io/react-native/docs/navigation.html#navigatorios)): included with RN, janky imperative interface
+- [NavigationExperimental](https://facebook.github.io/react-native/docs/navigation.html#navigationexperimental): also included in RN, more functional but still has "experimental" in it name
+- [exponent/ex-navigator](https://github.com/exponent/ex-navigator): provided by exponent, a wrapper around Navigator with a better interface (*deprecated in favor of react-navigation?*)
+- [exponent/ex-navigation](https://github.com/exponent/ex-navigation): also by exponent, a successor (?) of ex-navigator (*deprecated in favor of react-navigation?*)
+- [wix/react-native-navigation](https://github.com/wix/react-native-navigation): an independent "native" navigator, iOS only so far
+- [react-native-router-flux](https://github.com/aksonov/react-native-router-flux)
 
 #### High-level design
 - Routers define the relationship between URIs, actions, and navigation state. They allow to share navigation logic between mobile apps, web apps, and server rendering.
