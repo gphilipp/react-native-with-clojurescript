@@ -120,8 +120,12 @@ So, these libraries aren't useful anymore :
 
 ## Lists
 
-- https://facebook.github.io/react-native/blog/2017/03/13/better-list-views.html
-- Example of VirtualizedList: https://gist.github.com/raspasov/e9a1008f2c0d5be2d202f0a4cdebe009
+Facebook has implemented a virtualized list to reduce memory consumption: https://facebook.github.io/react-native/blog/2017/03/13/better-list-views.html
+
+> @raspasov [on 2017-03-30](https://clojurians-log.clojureverse.org/cljsrn/2017-03-30.html): ...I’ve replaced all my old ListView cases with VirtualizedList, works very well so far.
+
+- Example of VirtualizedList with Om-Next: https://gist.github.com/raspasov/e9a1008f2c0d5be2d202f0a4cdebe009
+- Example of VirtualizedList with Reagent: https://gist.github.com/seantempesta/8b01e71148d9b01f8591d083926e2c89
 
 
 ## Running on device
