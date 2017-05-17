@@ -112,6 +112,32 @@ So, these libraries aren't useful anymore :
 - [wix/react-native-navigation](https://github.com/wix/react-native-navigation): an independent "native" navigator, iOS only so far
 - [react-native-router-flux](https://github.com/aksonov/react-native-router-flux)
 
+
+#### Customize navigation 
+
+> gphilipp [16:12] 
+> @seantempesta do you know how to customize the header from the screen ? Basically, replicate this example from the react-navigation doc: https://reactnavigation.org/docs/intro/headers
+
+> seantempesta 
+> @gphilipp:  So, you’ve got two options.  You can statically assign `navigationOptions` or you can use a function and dynamically return the `navigationOptions`.  Here are some examples from the login screen in my re-frame example:
+
+```clojure
+(def static-navigationOptions {:headerTitle "Login"
+                               :headerRight (fn []
+                                              [:> Button {:title   "Sign In"
+                                                          :onPress #(dispatch [:login])}])})
+
+(defn dynamic-navigationOptions [{:keys [navigation] :as props}]
+  (let [navigate (:navigate navigation)]
+    {:headerTitle "Login"
+     :headerRight (fn []
+                    [:> Button {:title   "Sign In"
+                                :onPress #(navigate "Loading")}])}))
+                                
+```
+
+
+
 #### High-level design
 - Routers define the relationship between URIs, actions, and navigation state. They allow to share navigation logic between mobile apps, web apps, and server rendering.
 - Navigators allow you to define your application's navigation structure. Navigators also render common elements such as headers and tab bars which you can configure. Under the hood, navigators are plain React components.
