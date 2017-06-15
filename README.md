@@ -352,5 +352,11 @@ http://stackoverflow.com/questions/38198511/how-to-prevent-node-from-running-out
 - If you need react native crash analysis tools: http://stackoverflow.com/questions/36947752/whats-a-good-setup-for-react-native-crash-reporting
 
 
+# Useful Code
 
+```clojure
+(defn obj->vec [obj]
+  "Put object properties into a vector"
+  (vec (map (fn [k] {:key k :val (aget obj k)}) (.keys js/Object obj))))
+```
 
