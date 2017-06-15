@@ -311,6 +311,10 @@ oh my! 60 fps UI on iphone 5 device :aw_yeah:
 
 
 ## Tips
+
+You can disable the very painful messages in xcode like "nw_connection_get_connected_socket_block_invoke 476 Connection has no connected handler": https://github.com/facebook/react-native/issues/10027#issuecomment-249338419
+
+
 recently many dot-forms did not work for me because those required symbol instead of expression as a first argument in things like: (.. (expr) -someAttr -anotherAttr)
 so I used let, and it worked. (let [s (expr)] (.. s -someAttr -anotherAttr)
 - use refs w/ reagent : [example1](https://clojurians.slack.com/files/andre.richards/F1Y699AMV/drawer___ref.clj), [example 2](https://gist.github.com/pesterhazy/4d9df2edc303e5706d547aeabe0e17e1)
