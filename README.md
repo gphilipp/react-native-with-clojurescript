@@ -236,6 +236,7 @@ flight, using a tool called pilot
 
 ## Logging
 - Use `react-native log-ios` in a separate terminal (cluttered with random, useless messages that it's really hard to read says @pesterhazy)
+- You can use timbre in conjunction with cljs-devtools, you can use this code https://github.com/ptaoussanis/timbre/issues/132#issuecomment-180268825
 
 ## Building
 
@@ -319,7 +320,8 @@ https://github.com/Day8/re-frame/issues/204#issuecomment-250337344
 
 
 ## Tips
-1. Recently many dot-forms did not work for me because those required symbol instead of expression as a first argument in things like:
+1. you can enable custom formatters in Chrome with [cljs-devtools](https://github.com/binaryage/cljs-devtools)
+2. Recently many dot-forms did not work for me because those required symbol instead of expression as a first argument in things like:
 
     ```clojure 
     (.. (expr) -someAttr -anotherAttr)
@@ -330,12 +332,12 @@ https://github.com/Day8/re-frame/issues/204#issuecomment-250337344
     (let [s (expr)] (.. s -someAttr -anotherAttr)
     ```
 
-2. use refs w/ reagent : [example1](https://clojurians.slack.com/files/andre.richards/F1Y699AMV/drawer___ref.clj), [example 2](https://gist.github.com/pesterhazy/4d9df2edc303e5706d547aeabe0e17e1)
+3. use refs w/ reagent : [example1](https://clojurians.slack.com/files/andre.richards/F1Y699AMV/drawer___ref.clj), [example 2](https://gist.github.com/pesterhazy/4d9df2edc303e5706d547aeabe0e17e1)
  
-
 
 ## Build plugin offline
 https://github.com/vikeri/rn-cljs-tools
+
 
 ## CI
 https://pilloxa.gitlab.io/posts/ci-with-gitlab-and-docker/
@@ -356,9 +358,10 @@ https://realm.io/docs/react-native/latest/#getting-started
 
 
 ## Troubleshooting
+
+
 -  `nth not supported on this type cljs.core/PersistentHashMap`
 Often caused by an invalid destructuring, usually a wrong call to rf/dispatch (missing params, or forgot to add []).
-
 
 - `Undefined is not an object (evaluating 'blah.core.init.call')`
 This is usually a compilation issue. Perform a `lein cljs build` to locate the problem.
@@ -369,6 +372,8 @@ This is usually a compilation issue. Perform a `lein cljs build` to locate the p
 http://stackoverflow.com/questions/38198511/how-to-prevent-node-from-running-out-of-memory-when-bundling-js-for-react-native/38198512
 
 - Never ever use a `println` or a `prn` inside your code, use the logging method described above with `react-native log-ios`, it will works correctly with the simulator or in dev mode on real device but will _crash abruptly_ when deployed in production (like with beta testflight).
+
+- Don't require images by concatenating strings, it will work in development but will crash in production (or beta testflight). See https://facebook.github.io/react-native/docs/images.html
 
 - If you need react native crash analysis tools: http://stackoverflow.com/questions/36947752/whats-a-good-setup-for-react-native-crash-reporting
 
