@@ -359,7 +359,20 @@ https://realm.io/docs/react-native/latest/#getting-started
 
 ## Troubleshooting
 
+### Memory issues
+Sometimes the node packager will run out of memory. 
 
+The solution for iOS is to edit the following file: ios/YourProjectName.xcodeproj/project.pbxproj and change the following line (~600)
+
+`shellScript = "export NODE_BINARY=node\n../node_modules/react-native/packager/react-native-xcode.sh";`
+to
+
+`shellScript = "export NODE_BINARY='node --max_old_space_size=4092'\n../node_modules/react-native/packager/react-native-xcode.sh";`
+
+
+https://stackoverflow.com/a/38198512/50114
+
+### Other issues
 -  `nth not supported on this type cljs.core/PersistentHashMap`
 Often caused by an invalid destructuring, usually a wrong call to rf/dispatch (missing params, or forgot to add []).
 
