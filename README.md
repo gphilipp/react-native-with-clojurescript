@@ -369,6 +369,15 @@ to
 
 `shellScript = "export NODE_BINARY='node --max_old_space_size=4092'\n../node_modules/react-native/packager/react-native-xcode.sh";`
 
+Other tricks include (thx @ronb : https://clojurians.slack.com/archives/C0E1SN0NM/p1498904841241132):
+
+- /Users/r/s/wbl/node_modules/react-native/packager/src/JSTransformer/index.js increase transform timeout interval
+- Add --max_old_space_size=16384 to node command line 
+- If you get node gc-timeouts -> https://github.com/facebook/react-native/issues/5196#issuecomment-237549879
+- https://github.com/drapanjanas/re-natal/issues/75 is also helpful with that issue
+- this is usually caused by (js/require)‘ing large json files and a large compiled js file. It is much better to use https://github.com/futurepress/react-native-static-server or a similar package
+
+
 
 https://stackoverflow.com/a/38198512/50114
 
