@@ -376,7 +376,8 @@ The good news it that there might be some hope, as we have the exact same issue 
 And since someone uploaded a project to reproduce it reliably, the issue will most likely be fixed in the near future: https://github.com/facebookincubator/create-react-app/issues/2555#issuecomment-313774797
 
 
-Other tricks include (thx @ronb : https://clojurians.slack.com/archives/C0E1SN0NM/p1498904841241132):
+##### Other tricks 
+(thx @ronb : https://clojurians.slack.com/archives/C0E1SN0NM/p1498904841241132):
 
 - /Users/r/s/wbl/node_modules/react-native/packager/src/JSTransformer/index.js increase transform timeout interval
 - Add --max_old_space_size=16384 to node command line 
