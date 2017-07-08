@@ -369,7 +369,9 @@ to
 
 `shellScript = "export NODE_BINARY='node --max_old_space_size=4092'\n../node_modules/react-native/packager/react-native-xcode.sh";`
 
-**Update 8 Jul 2017** : This tricks sort of worked ok with RN 0.44 but falls short with RN 0.45. On my desktop, the `--max_old_space_size=4092` has no effect on the maximum memory of the node process. It will not go higher than 1.5 gb. My theory is that the packager uses more memory in RN 0.45 than in RN 0.44 or there might be a leak, so the node process will OOM with 1.5 gb only. 
+##### Update 8 Jul 2017
+It seems the memory problem comes from the SourceMapGenerator.toJSON function https://gist.github.com/gphilipp/10cebb3aba7afbafbc1cca7b265a7b7e#file-short_build_rn_memory-log-L108-L109. the log includes gc traces.
+I can’t find any settings which can effectively increase the maximum memory allocated to the node process, and I’ve tried them all, with various versions of node. The trick above sort of worked ok with RN 0.44 but falls short with RN 0.45. On my desktop, the `--max_old_space_size=4092` has no effect on the maximum memory of the node process. It will not go higher than 1.5 gb. My theory is that the packager uses more memory in RN 0.45 than in RN 0.44 or there might be a leak, so the node process will OOM with 1.5 gb only. 
 The good news it that there might be some hope, as we have the exact same issue than someone who filed it against https://github.com/facebookincubator/create-react-app. Watch this issue: https://github.com/facebookincubator/create-react-app/issues/2555 
 And since someone uploaded a project to reproduce it reliably, the issue will most likely be fixed in the near future: https://github.com/facebookincubator/create-react-app/issues/2555#issuecomment-313774797
 
